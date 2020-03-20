@@ -1,0 +1,11 @@
+.buttonArea{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100px;
+  width: 250px;
+  border: 3px solid;
+  background-color: rgba(179, 255, 177, 0.75);
+  border-color: #79ce7e;
+  border-radius: 10px;
+}
