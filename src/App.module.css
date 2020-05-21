@@ -1,21 +1,37 @@
-.app{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.header {
+    font-size: 56px;
+    margin: 100px 0 0;
+    text-align: center;
+    color: #363027;
+    transition: 0.4s;
+}
+
+.header:hover {
+    color: #5e4c34;
+    transform: scale(1.1);
 
 }
 
-.container{
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 60px 0 10px;
+}
+
+.container {
     width: 300px;
     height: 240px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 150px;
     border: 3px solid;
     border-color: #79ce7e;
     border-radius: 10px;
-    margin-bottom: 10px;
     background-color: rgba(158, 227, 156, 0.79);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+    -23px 0 20px -23px rgba(0, 0, 0, .8),
+    23px 0 20px -23px rgba(0, 0, 0, .8),
+    0 0 40px rgba(0, 0, 0, .1) inset;
 }

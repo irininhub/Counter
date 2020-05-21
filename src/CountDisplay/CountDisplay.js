@@ -11,11 +11,11 @@ class CountDisplay extends React.Component {
             (this.props.disabledClass) ? 'messagered' : 'count';
 
         return (<div>
-            <div className="counterDisplay">
+                <div className="counterDisplay">
                     <div className={classForCount}>
                         {displayValue}
                     </div>
-            </div>
+                </div>
                 <div>
                     <ButtonArea resetCounter={this.props.resetCounter}
                                 increaseCounter={this.props.increaseCounter}

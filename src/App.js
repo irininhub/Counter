@@ -14,14 +14,6 @@ import {connect} from "react-redux";
 
 class App extends React.Component {
 
-    state = {
-        // startCount: 0,
-        // value: 'Enter values',
-        // maxValue: 0,
-        // isHidden: false,
-        // desabled: false
-    };
-
     increaseCounter = () => {
         if (this.props.value < this.props.maxValue) {
             let value = this.props.value + 1;
@@ -31,23 +23,17 @@ class App extends React.Component {
     resetCounter = () => {
         let startValue = this.props.startCount;
         this.props.resetCounter(startValue)
-        // this.setState({value: this.state.startCount})
     };
 
 
     onStartValueChange = (value) => {
         this.props.changeStartValue(Number(value))
-        // this.setState({startCount: Number(value)})
     };
     onMaxValueChange = (maxValue) => {
         this.props.changeMaxValue(Number(maxValue))
-        // this.setState({maxValue: Number(value)})
     };
     onValueChange = () => {
         this.props.setValues();
-        // this.setState({value: this.state.startCount});
-        // this.setState({desabled: true});
-        // this.setState({ isHidden:true})
     };
     showSet = () => {
         this.props.showSet()
@@ -61,34 +47,34 @@ class App extends React.Component {
         let disabledInc = this.props.value === this.props.maxValue;
 
         return (
+            <>
+                <h1 className={s.header}>Counter</h1>
+                <div className={s.app}>
 
-            <div className={s.app}>
+                    {!this.props.isHidden && <div className={s.container}>
 
-                {!this.props.isHidden && <div className={s.container}>
-
-                    <SetDisplay {...this.props}
-                                onStartValueChange={this.onStartValueChange}
-                                onMaxValueChange={this.onMaxValueChange}
-                                title={'set'}
-                                disabledSet={disabledSet}
-                                onValueChange={this.onValueChange}/>
-                </div>}
+                        <SetDisplay {...this.props}
+                                    onStartValueChange={this.onStartValueChange}
+                                    onMaxValueChange={this.onMaxValueChange}
+                                    title={'set'}
+                                    disabledSet={disabledSet}
+                                    onValueChange={this.onValueChange}/>
+                    </div>}
 
 
-                {this.props.isHidden && <div className={s.container}>
-                    <CountDisplay {...this.props}
-                                  value={this.props.value}
-                        //           maxValue={this.props.maxValue}
-                        //           startCount={this.props.startCount}
-                                  disabledClass={disabledSet}
-                                  resetCounter={this.resetCounter}
-                                  increaseCounter={this.increaseCounter}
-                                  showSet={this.showSet}
-                                  disabledRes={disabledRes}
-                                  disabledInc={disabledInc}
-                    />
-                </div>}
-            </div>
+                    {this.props.isHidden && <div className={s.container}>
+                        <CountDisplay {...this.props}
+                                      value={this.props.value}
+                                      disabledClass={disabledSet}
+                                      resetCounter={this.resetCounter}
+                                      increaseCounter={this.increaseCounter}
+                                      showSet={this.showSet}
+                                      disabledRes={disabledRes}
+                                      disabledInc={disabledInc}
+                        />
+                    </div>}
+                </div>
+            </>
         );
     }
 }

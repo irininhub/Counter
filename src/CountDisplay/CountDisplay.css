@@ -1,5 +1,4 @@
 
-
 .counterDisplay{
     text-align: center;
     height: 70px;
@@ -9,6 +8,7 @@
     border-radius: 10px;
     margin-bottom: 10px;
     background-color: rgba(179, 255, 177, 0.75);
+
 }
 .count{
     font-size: 46px;

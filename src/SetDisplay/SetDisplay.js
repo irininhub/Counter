@@ -14,20 +14,19 @@ class SetDisplay extends React.Component {
 
     render = () => {
 
-
         let inputClass = this.props.disabledSet ? 'redinput' : 'input';
 
         return (<div className="box">
                 <div className="display">
                     <div>
-                        <span>start value</span>
+                        <span>start value </span>
                         <input value={this.props.startCount}
                                onChange={this.onInputStart}
                                className={inputClass}
                                type='number'/>
                     </div>
                     <div>
-                        <span>max value</span> <input value={this.props.maxValue}
+                        <span>max value </span> <input value={this.props.maxValue}
                                                       onChange={this.onInputMax}
                                                       className={inputClass}
                                                       type='number'/>
