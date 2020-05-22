@@ -4,43 +4,43 @@ import Button from "../ButtonArea/Button/Button";
 
 class SetDisplay extends React.Component {
 
-    onInputStart = (e) => {
-        this.props.onStartValueChange(e.currentTarget.value)
-    };
-    onInputMax = (e) => {
-        this.props.onMaxValueChange(e.currentTarget.value)
-    };
+  onInputStart = (e) => {
+    this.props.onStartValueChange(e.currentTarget.value)
+  };
+  onInputMax = (e) => {
+    this.props.onMaxValueChange(e.currentTarget.value)
+  };
 
 
-    render = () => {
+  render = () => {
 
-        let inputClass = this.props.disabledSet ? 'redinput' : 'input';
+    let inputClass = this.props.disabledSet ? 'redinput' : 'input';
 
-        return (<div className="box">
-                <div className="display">
-                    <div>
-                        <span>start value </span>
-                        <input value={this.props.startCount}
-                               onChange={this.onInputStart}
-                               className={inputClass}
-                               type='number'/>
-                    </div>
-                    <div>
-                        <span>max value </span> <input value={this.props.maxValue}
-                                                      onChange={this.onInputMax}
-                                                      className={inputClass}
-                                                      type='number'/>
-                    </div>
-                </div>
-                <div>
-                    <Button title={'set'}
-                            onClickHandler={this.props.onValueChange}
-                            disabledButton={this.props.disabledSet}
-                    />
-                </div>
-            </div>
-        );
-    }
+    return (<div className="box">
+        <div className="display">
+          <div>
+            <span>start value </span>
+            <input value={this.props.startCount}
+                   onChange={this.onInputStart}
+                   className={inputClass}
+                   type='number'/>
+          </div>
+          <div>
+            <span>max value </span> <input value={this.props.maxValue}
+                                           onChange={this.onInputMax}
+                                           className={inputClass}
+                                           type='number'/>
+          </div>
+        </div>
+        <div>
+          <Button title={'set'}
+                  onClickHandler={this.props.onValueChange}
+                  disabledButton={this.props.disabledSet}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 

@@ -5,17 +5,18 @@ import './Button.css';
 class Button extends React.Component {
 
 
-    render = () => {
+  render = () => {
 
-     let classForButton = this.props.disabledButton ? 'disabled': 'button';
+    let classForButton = this.props.disabledButton ? 'disabled' : 'button';
 
-        return (
+    return (
 
-            <div>
-                <button className={classForButton} disabled={this.props.disabledButton} onClick={this.props.onClickHandler}>{this.props.title}</button>
-            </div>
-        );
-    }
+      <div>
+        <button className={classForButton} disabled={this.props.disabledButton}
+                onClick={this.props.onClickHandler}>{this.props.title}</button>
+      </div>
+    );
+  }
 }
 
 export default Button;
